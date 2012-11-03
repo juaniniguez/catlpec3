@@ -2,7 +2,7 @@
  * To change this template, choose Tools | Templates
  * and open the template in the editor.
  */
-package uoc.tds.pec3.cliente;
+package uoc.tds.pec3.client;
 /* EJEMPLO CONEXION RMI PARA TDS/TDP
 * Universitat Oberta de Catalunya (UOC) - Primavera de 2012
 * Joan Esteve Riasol
