@@ -10,7 +10,7 @@ package uoc.tds.pec3.server.impl;
 
 import java.io.Serializable;
 import java.rmi.RemoteException;
-import uoc.tds.pec3.common.Pec3Interface;
+import uoc.tds.pec3.common.GestorEstocInterface;
 
 /**
 * Clase implementacion de la interficie RMI. Capa de negocio.
@@ -18,15 +18,15 @@ import uoc.tds.pec3.common.Pec3Interface;
 * @author jestever@uoc.edu
 */
 
-public class Pec3Impl extends java.rmi.server.UnicastRemoteObject implements Pec3Interface,Serializable{
+public class GestorEstocImpl extends java.rmi.server.UnicastRemoteObject implements GestorEstocInterface,Serializable{
 
 	private static final long serialVersionUID = 1L;
 	
-	public Pec3Impl() throws RemoteException {
+	public GestorEstocImpl() throws RemoteException {
 		super();
 	}
 
-	public Pec3Impl(int port) throws RemoteException{
+	public GestorEstocImpl(int port) throws RemoteException{
 		super(port);
 	}
 	

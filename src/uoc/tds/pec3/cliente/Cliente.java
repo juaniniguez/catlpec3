@@ -13,7 +13,7 @@ import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
-import uoc.tds.pec3.common.Pec3Interface;
+import uoc.tds.pec3.common.GestorEstocInterface;
 
 /**
 * Esta es la clase principal del Cliente
@@ -21,7 +21,7 @@ import uoc.tds.pec3.common.Pec3Interface;
 */
 public class Cliente {
 
-	private Pec3Interface remoto;
+	private GestorEstocInterface remoto;
 	private final String URL = "localhost";
 	private final int PORT = 1099;
 	private final String JNDI_NAME = "HelloWorld";
@@ -34,7 +34,7 @@ public class Cliente {
 		try{
 			System.out.println("Conectando al servidor desde cliente...");
 			Registry registry = LocateRegistry.getRegistry(URL,PORT);
-			remoto=(Pec3Interface)registry.lookup(JNDI_NAME);
+			remoto=(GestorEstocInterface)registry.lookup(JNDI_NAME);
 			System.out.println("Conectado!");
 			}catch (NotBoundException e) {
 			e.printStackTrace();

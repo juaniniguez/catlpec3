@@ -16,7 +16,7 @@ import java.rmi.RemoteException;
 * @author jestever@uoc.edu
 */
 
-public interface Pec3Interface extends java.rmi.Remote{
+public interface GestorEstocInterface extends java.rmi.Remote{
 
 /**
 * Metodo sencillo de test de la conexion RMI

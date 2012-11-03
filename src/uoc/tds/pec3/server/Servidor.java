@@ -12,8 +12,8 @@ import java.io.IOException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
-import uoc.tds.pec3.common.Pec3Interface;
-import uoc.tds.pec3.server.impl.Pec3Impl;
+import uoc.tds.pec3.common.GestorEstocInterface;
+import uoc.tds.pec3.server.impl.GestorEstocImpl;
 
 /**
 * Clase principal del servidor
@@ -34,7 +34,7 @@ public class Servidor {
 		try {
 			System.out.println("Iniciando servidor RMI...");
 			Registry registry = LocateRegistry.createRegistry(PORT);
-			Pec3Interface objetoRemoto = new Pec3Impl();
+			GestorEstocInterface objetoRemoto = new GestorEstocImpl();
 			registry.rebind(JNDI_NAME, objetoRemoto);
 			System.out.println("Servidor iniciado!");
 			
