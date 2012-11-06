@@ -4,6 +4,8 @@
  */
 package edu.uoc.tds.pec3.server;
 
+import edu.uoc.tds.i18n.TDSLanguageUtils;
+import java.io.IOException;
 /**
  *
  * @author Gaby
@@ -13,8 +15,13 @@ public class ServidorOnOffUI extends javax.swing.JPanel {
     /**
      * Creates new form ServidorOnOffUI
      */
+        
     public ServidorOnOffUI() {
         initComponents();
+        
+        TDSLanguageUtils.setDefaultLanguage("i18n/messages");
+        
+        jButton1.setText(TDSLanguageUtils.getMessage("ServidorOnOf.iniciarServidor.text"));
         
         IniciarServidor();
     }
@@ -43,6 +50,11 @@ public class ServidorOnOffUI extends javax.swing.JPanel {
         jInternalFrame1.setVisible(true);
 
         jButton1.setText("jButton1");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("jButton2");
 
@@ -87,6 +99,10 @@ public class ServidorOnOffUI extends javax.swing.JPanel {
             .addComponent(jInternalFrame1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
