@@ -18,6 +18,8 @@ public class ServidorOnOff extends javax.swing.JFrame {
         initComponents();
         TDSLanguageUtils.setDefaultLanguage("i18n/messages");
         jButton1.setText(TDSLanguageUtils.getMessage("ServidorOnOf.iniciarServidor.text"));
+        jButton2.setText(TDSLanguageUtils.getMessage("ServidorOnOf.PararServidor.text"));
+        jLabel2.setText(TDSLanguageUtils.getMessage("ServidorOnOf.EtiquetaServidor.text"));
         
     }
 
