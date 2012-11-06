@@ -74,7 +74,7 @@ public class GestorBBDD {
     public boolean modificarRecurso(Recurso recurso) {
         PreparedStatement st = null;
         try {
-            String query = "INSERT INTO votacion (id_entrenador,id_equipo,puntos,fecha_votacion) VALUES (?, ?, ?, ?)";
+            String query = "UPDATE ... (?, ?, ?, ?)";
             st = conexion.prepareStatement(query, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
             /*
             st.setInt(1, recurso.getIdEntrenador());
@@ -108,11 +108,12 @@ public class GestorBBDD {
         ResultSet rs = null;
         try {
             st = conexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
-            String query = "SELECT e.id_entrenador, e.id_equipo, e.nombre, e.apellidos, e.fecha_alta, eq.nombre AS nombre_equipo FROM entrenador AS e INNER JOIN equipo AS eq ON e.id_equipo = eq.id_equipo";
+            String query = "SELECT id_aula, descripcion_aula FROM AULA";
             rs = st.executeQuery(query);
             while (rs.next()) {
                 Aula aula = new Aula();
-                aula.setNombreRecurso(rs.getString("nombre_recurso"));
+                aula.setIdAula(rs.getInt("id_aula"));
+                aula.setDescripcion(rs.getString("descripcion_aula"));
                 lista.add(aula);
             }
         } catch (SQLException e) {
@@ -138,7 +139,7 @@ public class GestorBBDD {
         ResultSet rs = null;
         try {
             st = conexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
-            String query = "SELECT e.id_entrenador, e.id_equipo, e.nombre, e.apellidos, e.fecha_alta, eq.nombre AS nombre_equipo FROM entrenador AS e INNER JOIN equipo AS eq ON e.id_equipo = eq.id_equipo";
+            String query = "SELECT * FROM RECURSO";
             rs = st.executeQuery(query);
             while (rs.next()) {
                 Recurso recurso = new Recurso();
@@ -168,7 +169,7 @@ public class GestorBBDD {
         ResultSet rs = null;
         try {
             st = conexion.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_UPDATABLE);
-            String query = "SELECT e.id_entrenador, e.id_equipo, e.nombre, e.apellidos, e.fecha_alta, eq.nombre AS nombre_equipo FROM entrenador AS e INNER JOIN equipo AS eq ON e.id_equipo = eq.id_equipo";
+            String query = "SELECT * FROM PETICON_RECURSO";
             rs = st.executeQuery(query);
             while (rs.next()) {
                 PeticionRecurso peticion = new PeticionRecurso();

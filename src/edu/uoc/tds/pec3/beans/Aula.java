@@ -5,46 +5,23 @@ import java.sql.Date;
 
 public class Aula implements Serializable {
 
-    private int idRecurso;
-    private String nombreRecurso;
-    private int stock;
-    private Date ultimaEntradaStock;
-    private Date ultimaSalidaStock;    
+    private int idAula;
+    private String descripcion;
 
-    public int getIdRecurso() {
-        return idRecurso;
+    public int getIdAula() {
+        return idAula;
     }
 
-    public String getNombreRecurso() {
-        return nombreRecurso;
+    public void setIdAula(int idAula) {
+        this.idAula = idAula;
     }
 
-    public void setNombreRecurso(String nombreRecurso) {
-        this.nombreRecurso = nombreRecurso;
-    }    
-
-    public int getStock() {
-        return stock;
+    public String getDescripcion() {
+        return descripcion;
     }
 
-    public void setStock(int stock) {
-        this.stock = stock;
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
     }
-
-    public Date getUltimaEntradaStock() {
-        return ultimaEntradaStock;
-    }
-
-    public void setUltimaEntradaStock(Date ultimaEntradaStock) {
-        this.ultimaEntradaStock = ultimaEntradaStock;
-    }
-
-    public Date getUltimaSalidaStock() {
-        return ultimaSalidaStock;
-    }
-
-    public void setUltimaSalidaStock(Date ultimaSalidaStock) {
-        this.ultimaSalidaStock = ultimaSalidaStock;
-    }
-
+    
 }

@@ -1,6 +1,5 @@
 package edu.uoc.tds.pec3.server.impl;
 
-import edu.uoc.tds.i18n.TDSLanguageUtils;
 import edu.uoc.tds.pec3.beans.Aula;
 import edu.uoc.tds.pec3.beans.PeticionRecurso;
 import edu.uoc.tds.pec3.beans.Recurso;
@@ -11,7 +10,6 @@ import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.Date;
 import java.util.List;
-import javax.swing.JOptionPane;
 
 public class GestorEstocInterfaceImpl extends UnicastRemoteObject
         implements GestorEstocInterface, Serializable {

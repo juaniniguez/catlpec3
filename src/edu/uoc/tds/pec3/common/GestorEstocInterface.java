@@ -1,12 +1,12 @@
 package edu.uoc.tds.pec3.common;
 
+import edu.uoc.tds.pec3.beans.Aula;
+import edu.uoc.tds.pec3.beans.PeticionRecurso;
+import edu.uoc.tds.pec3.beans.Recurso;
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 import java.util.Date;
 import java.util.List;
-import edu.uoc.tds.pec3.beans.Aula;
-import edu.uoc.tds.pec3.beans.PeticionRecurso;
-import edu.uoc.tds.pec3.beans.Recurso;
 
 /**
  * Interfaz RMI. Debe extender de la clase java.rmi.Remote

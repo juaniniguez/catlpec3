@@ -1,1 +1,1 @@
-start java -cp /src -Djava.security.policy=java.policy edu.uoc.tds.pec3.server.Servidor
+java -Djava.security.policy=java.policy edu.uoc.tds.pec3.server.Servidor
