@@ -4,7 +4,11 @@
  */
 package edu.uoc.tds.pec3.server;
 
+<<<<<<< HEAD
 import edu.uoc.tds.pec3.i18n.TDSLanguageUtils;
+=======
+import edu.uoc.tds.i18n.TDSLanguageUtils;
+>>>>>>> branch 'master' of https://github.com/juaniniguez/catlpec3.git
 import java.io.IOException;
 /**
  *

@@ -17,6 +17,7 @@ public interface GestorEstocInterface extends Remote {
 
     public List<Aula> obtenerAulas() throws RemoteException;
 
+<<<<<<< HEAD
     public List<PeticionRecurso> obtenerPeticionesPendientes(boolean noDisponibles) throws RemoteException;
 
     public List<Recurso> obtenerRecursos() throws RemoteException;
@@ -26,6 +27,17 @@ public interface GestorEstocInterface extends Remote {
     public void altaPeticionRecurso(PeticionRecurso peticion) throws RemoteException;
 
     public void aceptarPeticionRecurso(PeticionRecurso peticion) throws RemoteException;
+=======
+    public List<PeticionRecurso> obtenerPeticionesPendientes() throws RemoteException;
+
+    public List<Recurso> obtenerRecursos() throws RemoteException;
+
+    public void altaRecurso(Integer idRecurso,  Integer cantidad) throws RemoteException;
+
+    public void altaPeticionRecurso(Integer idRecurso,  Integer idAula, Integer cantidad) throws RemoteException;
+
+    public void aceptarPeticionRecurso(Integer idRecurso,  Integer idAula, Date fechaAltaPeticion) throws RemoteException;
+>>>>>>> branch 'master' of https://github.com/juaniniguez/catlpec3.git
 
     public String test() throws RemoteException;
     

@@ -3,7 +3,11 @@
     <type>org.netbeans.modules.java.j2seproject</type>
     <configuration>
         <data xmlns="http://www.netbeans.org/ns/j2se-project/3">
+<<<<<<< HEAD
             <name>PEC3</name>
+=======
+            <name>pec3</name>
+>>>>>>> branch 'master' of https://github.com/juaniniguez/catlpec3.git
             <source-roots>
                 <root id="src.dir"/>
             </source-roots>
