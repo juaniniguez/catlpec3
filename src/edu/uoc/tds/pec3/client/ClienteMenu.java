@@ -140,10 +140,10 @@ public class ClienteMenu extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(this, TDSLanguageUtils.getMessage("Cliente.mensajeConectadoServidor"));
         } catch (NotBoundException e) {
             e.printStackTrace();
-            JOptionPane.showMessageDialog(this, e.getMessage());
+            JOptionPane.showMessageDialog(this, TDSLanguageUtils.getMessage("RMI.conexion.error"));
         } catch (RemoteException e) {
             e.printStackTrace();
-            JOptionPane.showMessageDialog(this, e.getMessage());
+            JOptionPane.showMessageDialog(this, TDSLanguageUtils.getMessage("RMI.conexion.error_remoto"));
         } catch (Exception e) {
             e.printStackTrace();
             JOptionPane.showMessageDialog(this, e.getMessage());
