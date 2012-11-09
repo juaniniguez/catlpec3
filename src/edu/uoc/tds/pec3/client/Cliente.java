@@ -8,21 +8,12 @@ package edu.uoc.tds.pec3.client;
 * Joan Esteve Riasol
 */
 
-<<<<<<< HEAD
 import edu.uoc.tds.pec3.common.GestorEstocInterface;
 import java.io.IOException;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
-=======
-import java.io.IOException;
-import java.rmi.NotBoundException;
-import java.rmi.RemoteException;
-import java.rmi.registry.LocateRegistry;
-import java.rmi.registry.Registry;
-import edu.uoc.tds.pec3.common.GestorEstocInterface;
->>>>>>> branch 'master' of https://github.com/juaniniguez/catlpec3.git
 
 /**
 * Esta es la clase principal del Cliente
