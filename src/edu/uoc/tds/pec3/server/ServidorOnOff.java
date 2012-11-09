@@ -8,6 +8,7 @@ import edu.uoc.tds.pec3.beans.Recurso;
 import edu.uoc.tds.pec3.common.GestorEstocInterface;
 import edu.uoc.tds.pec3.i18n.TDSLanguageUtils;
 import edu.uoc.tds.pec3.server.impl.GestorEstocInterfaceImpl;
+import java.rmi.AlreadyBoundException;
 import java.rmi.NotBoundException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
@@ -37,6 +38,12 @@ public class ServidorOnOff extends javax.swing.JFrame {
         jButton1.setText(TDSLanguageUtils.getMessage("ServidorOnOf.btnIniciarServidor.text"));
         jButton2.setText(TDSLanguageUtils.getMessage("ServidorOnOf.btnDetenerServidor.text"));
         jButton2.setEnabled(false);
+        try {	
+            registry = LocateRegistry.createRegistry(PORT);
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, e.getMessage());
+        }
     }
 
     /**
@@ -106,23 +113,20 @@ public class ServidorOnOff extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 		try {
-			jLbMsg.setText(TDSLanguageUtils.getMessage("ServidorOnOf.mensajeServidorIniciando.text"));
-			registry = LocateRegistry.createRegistry(PORT);	
-                        GestorEstocInterface objetoRemoto = new GestorEstocInterfaceImpl();
-                        Test(objetoRemoto);
+			jLbMsg.setText(TDSLanguageUtils.getMessage("ServidorOnOf.mensajeServidorIniciando.text"));		
+                        GestorEstocInterface objetoRemoto = new GestorEstocInterfaceImpl();                        
 			registry.rebind(JNDI_NAME, objetoRemoto);
+                        //Test(objetoRemoto);
 			jLbMsg.setText(TDSLanguageUtils.getMessage("ServidorOnOf.mensajeServidorIniciado.text"));
                         jButton1.setEnabled(false);
                         jButton2.setEnabled(true);
-			
 		} catch (RemoteException e) {		
 			e.printStackTrace();
                         JOptionPane.showMessageDialog(this, e.getMessage());
 			
 		} catch (Exception e){
 			e.printStackTrace();
-                        JOptionPane.showMessageDialog(this, e.getMessage());
-			
+                        JOptionPane.showMessageDialog(this, e.getMessage());			
 		}
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -141,7 +145,7 @@ public class ServidorOnOff extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         try {
             registry.unbind(JNDI_NAME); 
-            registry = null;
+            //registry = null;
             jLbMsg.setText(TDSLanguageUtils.getMessage("ServidorOnOf.mensajeServidorNoIniciado.text"));
         } catch (RemoteException ex) {
             Logger.getLogger(ServidorOnOff.class.getName()).log(Level.SEVERE, null, ex);
