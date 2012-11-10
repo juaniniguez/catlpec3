@@ -35,6 +35,9 @@ public class ClienteMenu extends javax.swing.JFrame {
         jMenuOptions.setText(TDSLanguageUtils.getMessage("Cliente.menuOptions.text"));
         jMenuItem2.setText(TDSLanguageUtils.getMessage("Cliente.menuItem1_2.text"));
         jMenuItem1.setText(TDSLanguageUtils.getMessage("Cliente.menuItem1_1.text"));
+        jMenuItem4.setText(TDSLanguageUtils.getMessage("Cliente.menuItem2_1.text"));
+        jMenuItem5.setText(TDSLanguageUtils.getMessage("Cliente.menuItem2_2.text"));
+        jMenuItem6.setText(TDSLanguageUtils.getMessage("Cliente.menuItem2_3.text"));
     }
 
     /**
