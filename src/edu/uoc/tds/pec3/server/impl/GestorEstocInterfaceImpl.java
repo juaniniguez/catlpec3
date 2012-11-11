@@ -83,7 +83,7 @@ public class GestorEstocInterfaceImpl extends UnicastRemoteObject
             //rec.setUltimaSalida(new Date());
             gestorBBDD.modificarRecurso(rec);
         }else{
-            //Elevar excepcion de stock insuficiente
+            //Mostrar error de stock insuficiente
             JOptionPane.showMessageDialog(null, TDSLanguageUtils.getMessage("business.rules.error.stock_insuficiente"), TDSLanguageUtils.getMessage("error"), 0);
         }
     }

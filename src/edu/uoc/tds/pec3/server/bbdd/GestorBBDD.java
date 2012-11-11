@@ -58,25 +58,20 @@ public class GestorBBDD {
             conexionAbierta = true;
             return true;
         } catch (ClassNotFoundException e) {
-            //No se encontró el driver JDBC de Postgres en el classpath
-            e.printStackTrace();
+            //No se encontró el driver JDBC de Postgres en el classpath            
             JOptionPane.showMessageDialog(null, TDSLanguageUtils.getMessage("jdbc.conexion.bd.error.driver.jdbc"), TDSLanguageUtils.getMessage("error"), 0);
         } catch (FileNotFoundException e) {
-            //No se encontró el archivo "configuration.properties"
-            e.printStackTrace();
+            //No se encontró el archivo "configuration.properties"            
             JOptionPane.showMessageDialog(null, TDSLanguageUtils.getMessage("io.error.properties_no_encontrado"), TDSLanguageUtils.getMessage("error"), 0);
         } catch (IOException e) {
-            //El fichero properties no es correcto
-            e.printStackTrace();
+            //El fichero properties no es correcto            
             JOptionPane.showMessageDialog(null, TDSLanguageUtils.getMessage("io.error.properties_no_correcto"), TDSLanguageUtils.getMessage("error"), 0);
         } catch (SQLException e) {
-            //La base de datos no existe o login incorrecto
-            e.printStackTrace();
+            //La base de datos no existe o login incorrecto            
             JOptionPane.showMessageDialog(null, TDSLanguageUtils.getMessage("jdbc.conexion.bd.error.no_existe"), TDSLanguageUtils.getMessage("error"), 0);
         } catch (Exception e) {
-            //Excepción inesperada
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(null, TDSLanguageUtils.getMessage("error.excepcion.inersperada"), TDSLanguageUtils.getMessage("error"), 0);
+            //Excepción inesperada            
+            JOptionPane.showMessageDialog(null, TDSLanguageUtils.getMessage("error.excepcion.no_esperada"), TDSLanguageUtils.getMessage("error"), 0);
         }
 
         return false;
@@ -93,9 +88,8 @@ public class GestorBBDD {
             st.execute();
             return true;
         } catch (SQLException e) {
-            //La base de dades no existe, está parada, o login incorrecto
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(null, TDSLanguageUtils.getMessage("error.bbdd.no.existe"), TDSLanguageUtils.getMessage("error"), 0);
+            //La base de dades no existe, está parada, o login incorrecto            
+            JOptionPane.showMessageDialog(null, TDSLanguageUtils.getMessage("jdbc.conexion.bd.error.no_existe"), TDSLanguageUtils.getMessage("error"), 0);
             return false;
         } finally {
             try {
@@ -103,9 +97,8 @@ public class GestorBBDD {
                     st.close();
                 }
             } catch (Exception e) {
-                //Excepción inesperada
-                e.printStackTrace();
-                JOptionPane.showMessageDialog(null, TDSLanguageUtils.getMessage("error.excepcion.noesperada"), TDSLanguageUtils.getMessage("error"), 0);
+                //Excepción inesperada                
+                JOptionPane.showMessageDialog(null, TDSLanguageUtils.getMessage("error.excepcion.no_esperada"), TDSLanguageUtils.getMessage("error"), 0);
             }
         }
     }
@@ -125,17 +118,15 @@ public class GestorBBDD {
                 lista.add(aula);
             }
         } catch (SQLException e) {
-            //La base de dades no existe, está parada, o login incorrecto
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(null, TDSLanguageUtils.getMessage("error.bbdd.no.existe"), TDSLanguageUtils.getMessage("error"), 0);
+            //La base de dades no existe, está parada, o login incorrecto            
+            JOptionPane.showMessageDialog(null, TDSLanguageUtils.getMessage("jdbc.conexion.bd.error.no_existe"), TDSLanguageUtils.getMessage("error"), 0);
         } finally {
             try {
                 rs.close();
                 st.close();
             } catch (Exception e) {
-                //Excepción inesperada
-                e.printStackTrace();
-                JOptionPane.showMessageDialog(null, TDSLanguageUtils.getMessage("error.excepcion.inersperada"), TDSLanguageUtils.getMessage("error"), 0);
+                //Excepción inesperada                
+                JOptionPane.showMessageDialog(null, TDSLanguageUtils.getMessage("error.excepcion.no_esperada"), TDSLanguageUtils.getMessage("error"), 0);
             }
         }
         return lista;
@@ -159,17 +150,15 @@ public class GestorBBDD {
                 lista.add(recurso);
             }
         } catch (SQLException e) {
-            //La base de dades no existe, está parada, o login incorrecto
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(null, TDSLanguageUtils.getMessage("error.bbdd.no.existe"), TDSLanguageUtils.getMessage("error"), 0);
+            //La base de dades no existe, está parada, o login incorrecto            
+            JOptionPane.showMessageDialog(null, TDSLanguageUtils.getMessage("jdbc.conexion.bd.error.no_existe"), TDSLanguageUtils.getMessage("error"), 0);
         } finally {
             try {
                 rs.close();
                 st.close();
             } catch (Exception e) {
-                //Excepción inesperada
-                e.printStackTrace();
-                JOptionPane.showMessageDialog(null, TDSLanguageUtils.getMessage("error.excepcion.inersperada"), TDSLanguageUtils.getMessage("error"), 0);
+                //Excepción inesperada                
+                JOptionPane.showMessageDialog(null, TDSLanguageUtils.getMessage("error.excepcion.no_esperada"), TDSLanguageUtils.getMessage("error"), 0);
             }
         }
         return lista;
@@ -197,17 +186,15 @@ public class GestorBBDD {
                 lista.add(peticion);
             }
         } catch (SQLException e) {
-            //La base de dades no existe, está parada, o login incorrecto
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(null, TDSLanguageUtils.getMessage("error.bbdd.no.existe"), TDSLanguageUtils.getMessage("error"), 0);
+            //No se pudo conectar con la base de datos          
+            JOptionPane.showMessageDialog(null, TDSLanguageUtils.getMessage("jdbc.conexion.bd.error.no_existe"), TDSLanguageUtils.getMessage("error"), 0);
         } finally {
             try {
                 rs.close();
                 st.close();
             } catch (Exception e) {
-                //Excepción inesperada
-                e.printStackTrace();
-                JOptionPane.showMessageDialog(null, TDSLanguageUtils.getMessage("error.excepcion.inersperada"), TDSLanguageUtils.getMessage("error"), 0);
+                //Excepción inesperada                
+                JOptionPane.showMessageDialog(null, TDSLanguageUtils.getMessage("error.excepcion.no_esperada"), TDSLanguageUtils.getMessage("error"), 0);
             }
         }
         return lista;
@@ -228,17 +215,15 @@ public class GestorBBDD {
             rec.setUltimaEntrada(rs.getDate("ultima_entrada_stock"));
             rec.setUltimaSalida(rs.getDate("ultima_salida_stock"));
         } catch (SQLException e) {
-            //La base de dades no existe, está parada, o login incorrecto
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(null, TDSLanguageUtils.getMessage("error.bbdd.no.existe"), TDSLanguageUtils.getMessage("error"), 0);
+            //La base de dades no existe, está parada, o login incorrecto            
+            JOptionPane.showMessageDialog(null, TDSLanguageUtils.getMessage("jdbc.conexion.bd.error.no_existe"), TDSLanguageUtils.getMessage("error"), 0);
         } finally {
             try {
                 rs.close();
                 st.close();
             } catch (Exception e) {
-                //Excepción inesperada
-                e.printStackTrace();
-                JOptionPane.showMessageDialog(null, TDSLanguageUtils.getMessage("error.excepcion.inersperada"), TDSLanguageUtils.getMessage("error"), 0);
+                //Excepción inesperada                
+                JOptionPane.showMessageDialog(null, TDSLanguageUtils.getMessage("error.excepcion.no_esperada"), TDSLanguageUtils.getMessage("error"), 0);
             }
         }
         return rec;
@@ -255,17 +240,15 @@ public class GestorBBDD {
             rs = st.executeQuery(query);
             ret = rs.getInt(1);
         } catch (SQLException e) {
-            //La base de dades no existe, está parada, o login incorrecto
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(null, TDSLanguageUtils.getMessage("error.bbdd.no.existe"), TDSLanguageUtils.getMessage("error"), 0);
+            //La base de dades no existe, está parada, o login incorrecto            
+            JOptionPane.showMessageDialog(null, TDSLanguageUtils.getMessage("jdbc.conexion.bd.error.no_existe"), TDSLanguageUtils.getMessage("error"), 0);
         } finally {
             try {
                 rs.close();
                 st.close();
             } catch (Exception e) {
-                //Excepción inesperada
-                e.printStackTrace();
-                JOptionPane.showMessageDialog(null, TDSLanguageUtils.getMessage("error.excepcion.inersperada"), TDSLanguageUtils.getMessage("error"), 0);
+                //Excepción inesperada                
+                JOptionPane.showMessageDialog(null, TDSLanguageUtils.getMessage("error.excepcion.no_esperada"), TDSLanguageUtils.getMessage("error"), 0);
             }
         }
         return ret;
@@ -285,8 +268,8 @@ public class GestorBBDD {
             return true;
         } catch (SQLException e) {
             //La base de dades no existe, está parada, o login incorrecto
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(null, TDSLanguageUtils.getMessage("error.bbdd.no.existe"), TDSLanguageUtils.getMessage("error"), 0);
+            
+            JOptionPane.showMessageDialog(null, TDSLanguageUtils.getMessage("jdbc.conexion.bd.error.no_existe"), TDSLanguageUtils.getMessage("error"), 0);
             return false;
         } finally {
             try {
@@ -294,9 +277,8 @@ public class GestorBBDD {
                     st.close();
                 }
             } catch (Exception e) {
-                //Excepción inesperada
-                e.printStackTrace();
-                JOptionPane.showMessageDialog(null, TDSLanguageUtils.getMessage("error.excepcion.inersperada"), TDSLanguageUtils.getMessage("error"), 0);
+                //Excepción inesperada                
+                JOptionPane.showMessageDialog(null, TDSLanguageUtils.getMessage("error.excepcion.no_esperada"), TDSLanguageUtils.getMessage("error"), 0);
             }
         }
     }    
@@ -313,9 +295,8 @@ public class GestorBBDD {
             st.execute();
             return true;
         } catch (SQLException e) {
-            //La base de dades no existe, está parada, o login incorrecto
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(null, TDSLanguageUtils.getMessage("error.bbdd.no.existe"), TDSLanguageUtils.getMessage("error"), 0);
+            //La base de dades no existe, está parada, o login incorrecto            
+            JOptionPane.showMessageDialog(null, TDSLanguageUtils.getMessage("jdbc.conexion.bd.error.no_existe"), TDSLanguageUtils.getMessage("error"), 0);
             return false;
         } finally {
             try {
@@ -323,9 +304,8 @@ public class GestorBBDD {
                     st.close();
                 }
             } catch (Exception e) {
-                //Excepción inesperada
-                e.printStackTrace();
-                JOptionPane.showMessageDialog(null, TDSLanguageUtils.getMessage("error.excepcion.inersperada"), TDSLanguageUtils.getMessage("error"), 0);
+                //Excepción inesperada                
+                JOptionPane.showMessageDialog(null, TDSLanguageUtils.getMessage("error.excepcion.no_esperada"), TDSLanguageUtils.getMessage("error"), 0);
             }
         }
     }
