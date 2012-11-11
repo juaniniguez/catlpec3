@@ -46,7 +46,11 @@ public class Entrada_StockUI extends javax.swing.JPanel {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        jTextField1.setText("jTextField1");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
 
         jButton1.setText("jButton1");
 
@@ -97,6 +101,11 @@ public class Entrada_StockUI extends javax.swing.JPanel {
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;
     private javax.swing.JComboBox jComboBox1;
