@@ -141,14 +141,11 @@ public class ClienteMenu extends javax.swing.JFrame {
             Registry registry = LocateRegistry.getRegistry(URL, PORT);
             remoto = (GestorEstocInterface) registry.lookup(JNDI_NAME);
             JOptionPane.showMessageDialog(this, TDSLanguageUtils.getMessage("Cliente.mensajeConectadoServidor"));
-        } catch (NotBoundException e) {
-            e.printStackTrace();
+        } catch (NotBoundException e) {            
             JOptionPane.showMessageDialog(this, TDSLanguageUtils.getMessage("RMI.conexion.error"));
         } catch (RemoteException e) {
-            e.printStackTrace();
             JOptionPane.showMessageDialog(this, TDSLanguageUtils.getMessage("RMI.conexion.error_remoto"));
         } catch (Exception e) {
-            e.printStackTrace();
             JOptionPane.showMessageDialog(this, e.getMessage());
         }
     }
@@ -159,7 +156,7 @@ public class ClienteMenu extends javax.swing.JFrame {
             String respuesta = remoto.test();
             JOptionPane.showMessageDialog(this, respuesta);
         } catch (RemoteException e) {
-            e.printStackTrace();
+            JOptionPane.showMessageDialog(this, e.getMessage());
         }
     }
     /**
