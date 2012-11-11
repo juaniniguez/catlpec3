@@ -36,7 +36,7 @@ public class GestorBBDD {
             conexion.close();
             conexionAbierta = false;
         } catch (SQLException ex) {
-            //Logger.getLogger(GestorBBDD.class.getName()).log(Level.SEVERE, null, ex);
+            //Ya está cerrada
         }
     }
 
@@ -88,7 +88,7 @@ public class GestorBBDD {
             st.execute();
             return true;
         } catch (SQLException e) {
-            //La base de dades no existe, está parada, o login incorrecto            
+            //No se pudo conectar con la base de datos          
             JOptionPane.showMessageDialog(null, TDSLanguageUtils.getMessage("jdbc.conexion.bd.error.no_existe"), TDSLanguageUtils.getMessage("error"), 0);
             return false;
         } finally {
@@ -118,7 +118,7 @@ public class GestorBBDD {
                 lista.add(aula);
             }
         } catch (SQLException e) {
-            //La base de dades no existe, está parada, o login incorrecto            
+            //No se pudo conectar con la base de datos           
             JOptionPane.showMessageDialog(null, TDSLanguageUtils.getMessage("jdbc.conexion.bd.error.no_existe"), TDSLanguageUtils.getMessage("error"), 0);
         } finally {
             try {
@@ -150,7 +150,7 @@ public class GestorBBDD {
                 lista.add(recurso);
             }
         } catch (SQLException e) {
-            //La base de dades no existe, está parada, o login incorrecto            
+            //No se pudo conectar con la base de datos            
             JOptionPane.showMessageDialog(null, TDSLanguageUtils.getMessage("jdbc.conexion.bd.error.no_existe"), TDSLanguageUtils.getMessage("error"), 0);
         } finally {
             try {
@@ -215,7 +215,7 @@ public class GestorBBDD {
             rec.setUltimaEntrada(rs.getDate("ultima_entrada_stock"));
             rec.setUltimaSalida(rs.getDate("ultima_salida_stock"));
         } catch (SQLException e) {
-            //La base de dades no existe, está parada, o login incorrecto            
+            //No se pudo conectar con la base de datos           
             JOptionPane.showMessageDialog(null, TDSLanguageUtils.getMessage("jdbc.conexion.bd.error.no_existe"), TDSLanguageUtils.getMessage("error"), 0);
         } finally {
             try {
@@ -240,7 +240,7 @@ public class GestorBBDD {
             rs = st.executeQuery(query);
             ret = rs.getInt(1);
         } catch (SQLException e) {
-            //La base de dades no existe, está parada, o login incorrecto            
+            //No se pudo conectar con la base de datos          
             JOptionPane.showMessageDialog(null, TDSLanguageUtils.getMessage("jdbc.conexion.bd.error.no_existe"), TDSLanguageUtils.getMessage("error"), 0);
         } finally {
             try {
@@ -267,8 +267,7 @@ public class GestorBBDD {
             st.execute();
             return true;
         } catch (SQLException e) {
-            //La base de dades no existe, está parada, o login incorrecto
-            
+            //No se pudo conectar con la base de datos            
             JOptionPane.showMessageDialog(null, TDSLanguageUtils.getMessage("jdbc.conexion.bd.error.no_existe"), TDSLanguageUtils.getMessage("error"), 0);
             return false;
         } finally {
@@ -295,7 +294,7 @@ public class GestorBBDD {
             st.execute();
             return true;
         } catch (SQLException e) {
-            //La base de dades no existe, está parada, o login incorrecto            
+            //No se pudo conectar con la base de datos         
             JOptionPane.showMessageDialog(null, TDSLanguageUtils.getMessage("jdbc.conexion.bd.error.no_existe"), TDSLanguageUtils.getMessage("error"), 0);
             return false;
         } finally {
