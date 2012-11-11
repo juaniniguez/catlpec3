@@ -4,6 +4,9 @@
  */
 package edu.uoc.tds.pec3.client;
 
+import java.awt.BorderLayout;
+import java.awt.FlowLayout;
+
 import edu.uoc.tds.pec3.common.GestorEstocInterface;
 import edu.uoc.tds.pec3.i18n.TDSLanguageUtils;
 import java.rmi.NotBoundException;
@@ -23,6 +26,11 @@ public class ClienteMenu extends javax.swing.JFrame {
     private final int PORT = 1099;
     private final String JNDI_NAME = "GestorEstoc";
     
+    // this.setLayout(new FlowLayout());
+    
+    
+     
+    
     /**
      * Creates new form ClienteMenu
      */
@@ -40,6 +48,9 @@ public class ClienteMenu extends javax.swing.JFrame {
         jMenuItem6.setText(TDSLanguageUtils.getMessage("Cliente.menuItem2_3.text"));
     }
 
+     private Alta_PeticionUI AP;
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -60,11 +71,14 @@ public class ClienteMenu extends javax.swing.JFrame {
         jMenuItem6 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(null);
 
         jLbTitle.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
         jLbTitle.setForeground(new java.awt.Color(0, 51, 153));
         jLbTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLbTitle.setText("jLabel1");
+        getContentPane().add(jLbTitle);
+        jLbTitle.setBounds(290, 11, 218, 32);
 
         jMenuFile.setText("File");
 
@@ -92,6 +106,12 @@ public class ClienteMenu extends javax.swing.JFrame {
         jMenuOptions.add(jMenuItem4);
 
         jMenuItem5.setText("jMenuItem5");
+        jMenuItem5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem5ActionPerformed(evt);
+            }
+        });
+
         jMenuOptions.add(jMenuItem5);
 
         jMenuItem6.setText("jMenuItem6");
@@ -101,24 +121,10 @@ public class ClienteMenu extends javax.swing.JFrame {
 
         setJMenuBar(jMenuBar14);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLbTitle, javax.swing.GroupLayout.DEFAULT_SIZE, 499, Short.MAX_VALUE)
-                .addContainerGap())
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addGap(136, 136, 136)
-                .addComponent(jLbTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(159, Short.MAX_VALUE))
-        );
-
-        pack();
+       // pack();
+	   
+	    setSize(500,500);
+		
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
@@ -134,6 +140,22 @@ public class ClienteMenu extends javax.swing.JFrame {
         this.dispose();
         
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+   //Creamos una nueva instancia de panelHijoSuma
+        
+        AP = new Alta_PeticionUI();
+
+        //Agregamos la instancia al JFrame, con un layout al centro
+        this.add(AP, BorderLayout.CENTER);
+
+        //Hacemos que el JFrame tenga el tamaño de todos sus elementos
+        this.pack();// TODO add your handling code here:    
+
+
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+
 
     public void conectarCliente() {
         try {
