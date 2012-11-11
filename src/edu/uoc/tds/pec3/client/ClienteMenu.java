@@ -155,9 +155,8 @@ public class ClienteMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-   //Creamos una nueva instancia de 
-        
-		
+
+        	
 		//Si ya está el otro Jpanel añadido al contenedor, entonces se elimina
 			try{
 			this.remove(ES);
@@ -172,8 +171,20 @@ public class ClienteMenu extends javax.swing.JFrame {
 			}
 			catch(Exception e){
 			}	
-		
-		
+			//Si ya está el otro Jpanel añadido al contenedor, entonces se elimina
+			try{
+			this.remove(AP);
+			}
+			catch(Exception e){
+			}		
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+   //Creamos una nueva instancia de 		
         AP = new Alta_PeticionUI();
 
         //Agregamos la instancia al JFrame, con un layout al centro
@@ -190,7 +201,7 @@ public class ClienteMenu extends javax.swing.JFrame {
 		
 		//Si ya está el otro Jpanel añadido al contenedor, entonces se elimina
 			try{
-			this.remove(AP);
+			this.remove(ES);
 			}
 			catch(Exception e){
 			}
@@ -202,7 +213,12 @@ public class ClienteMenu extends javax.swing.JFrame {
 			}
 			catch(Exception e){
 			}	
-		
+			//Si ya está el otro Jpanel añadido al contenedor, entonces se elimina
+			try{
+			this.remove(AP);
+			}
+			catch(Exception e){
+			}	
 		
 		
 		
@@ -220,17 +236,23 @@ public class ClienteMenu extends javax.swing.JFrame {
     private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
         // TODO add your handling code here:
         
-      		//Si ya está el otro Jpanel añadido al contenedor, entonces se elimina
-			try{
-			this.remove(AP);
-			}
-			catch(Exception e){
-			}	  
-        
-		
-		      		//Si ya está el otro Jpanel añadido al contenedor, entonces se elimina
+		//Si ya está el otro Jpanel añadido al contenedor, entonces se elimina
 			try{
 			this.remove(ES);
+			}
+			catch(Exception e){
+			}
+			
+			
+		//Si ya está el otro Jpanel añadido al contenedor, entonces se elimina
+			try{
+			this.remove(AT);
+			}
+			catch(Exception e){
+			}	
+			//Si ya está el otro Jpanel añadido al contenedor, entonces se elimina
+			try{
+			this.remove(AP);
 			}
 			catch(Exception e){
 			}	  
