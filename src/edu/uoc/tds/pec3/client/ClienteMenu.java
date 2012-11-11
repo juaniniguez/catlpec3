@@ -74,6 +74,11 @@ public class ClienteMenu extends javax.swing.JFrame {
         jMenuItem6 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        addPropertyChangeListener(new java.beans.PropertyChangeListener() {
+            public void propertyChange(java.beans.PropertyChangeEvent evt) {
+                formPropertyChange(evt);
+            }
+        });
         getContentPane().setLayout(null);
 
         jLbTitle.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
@@ -81,7 +86,7 @@ public class ClienteMenu extends javax.swing.JFrame {
         jLbTitle.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLbTitle.setText("jLabel1");
         getContentPane().add(jLbTitle);
-        jLbTitle.setBounds(290, 11, 218, 32);
+        jLbTitle.setBounds(110, 70, 218, 32);
 
         jMenuFile.setText("File");
 
@@ -119,7 +124,6 @@ public class ClienteMenu extends javax.swing.JFrame {
                 jMenuItem5ActionPerformed(evt);
             }
         });
-
         jMenuOptions.add(jMenuItem5);
 
         jMenuItem6.setText("jMenuItem6");
@@ -134,10 +138,8 @@ public class ClienteMenu extends javax.swing.JFrame {
 
         setJMenuBar(jMenuBar14);
 
-        // pack();
-		setSize(713,190);
-		
-		
+        java.awt.Dimension screenSize = java.awt.Toolkit.getDefaultToolkit().getScreenSize();
+        setBounds((screenSize.width-535)/2, (screenSize.height-218)/2, 535, 218);
     }// </editor-fold>//GEN-END:initComponents
 
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
@@ -180,7 +182,8 @@ public class ClienteMenu extends javax.swing.JFrame {
                         
                         
                         
-                        
+                   jLbTitle.setVisible(false);
+                   
                         
                         
                         
@@ -221,7 +224,7 @@ public class ClienteMenu extends javax.swing.JFrame {
 			}	
 		
 		
-		
+	jLbTitle.setVisible(false);	
         
         ES = new Entrada_StockUI();
 
@@ -258,7 +261,8 @@ public class ClienteMenu extends javax.swing.JFrame {
 			}	  
         
         		     //Creamos una nueva instancia de
-        
+       jLbTitle.setVisible(false);
+                        
         AT = new Atender_PeticionUI();
 
         //Agregamos la instancia al JFrame, con un layout al centro
@@ -267,6 +271,10 @@ public class ClienteMenu extends javax.swing.JFrame {
         //Hacemos que el JFrame tenga el tamaño de todos sus elementos
         this.pack();// TODO add your handling code here:  
     }//GEN-LAST:event_jMenuItem6ActionPerformed
+
+    private void formPropertyChange(java.beans.PropertyChangeEvent evt) {//GEN-FIRST:event_formPropertyChange
+        // TODO add your handling code here:
+    }//GEN-LAST:event_formPropertyChange
 
 
 
