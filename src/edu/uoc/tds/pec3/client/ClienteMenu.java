@@ -26,7 +26,7 @@ public class ClienteMenu extends javax.swing.JFrame {
     private final int PORT = 1099;
     private final String JNDI_NAME = "GestorEstoc";
     
-    // this.setLayout(new FlowLayout());
+
     
     
      
@@ -36,6 +36,7 @@ public class ClienteMenu extends javax.swing.JFrame {
      */
     public ClienteMenu() {
         initComponents();
+         this.setLayout(new FlowLayout());
         TDSLanguageUtils.setDefaultLanguage("i18n/messages");
         this.setTitle(TDSLanguageUtils.getMessage("Application.title"));
         jLbTitle.setText(TDSLanguageUtils.getMessage("Application.title"));
@@ -48,7 +49,9 @@ public class ClienteMenu extends javax.swing.JFrame {
         jMenuItem6.setText(TDSLanguageUtils.getMessage("Cliente.menuItem2_3.text"));
     }
 
-     private Alta_PeticionUI AP;
+          private Alta_PeticionUI AP;
+          private Atender_PeticionUI AT;
+          private Entrada_StockUI ES;
     
     
     /**
@@ -103,6 +106,11 @@ public class ClienteMenu extends javax.swing.JFrame {
         jMenuOptions.setText("Edit");
 
         jMenuItem4.setText("jMenuItem4");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
         jMenuOptions.add(jMenuItem4);
 
         jMenuItem5.setText("jMenuItem5");
@@ -115,15 +123,20 @@ public class ClienteMenu extends javax.swing.JFrame {
         jMenuOptions.add(jMenuItem5);
 
         jMenuItem6.setText("jMenuItem6");
+        jMenuItem6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem6ActionPerformed(evt);
+            }
+        });
         jMenuOptions.add(jMenuItem6);
 
         jMenuBar14.add(jMenuOptions);
 
         setJMenuBar(jMenuBar14);
 
-       // pack();
-	   
-	    setSize(500,500);
+        // pack();
+		setSize(713,190);
+		
 		
     }// </editor-fold>//GEN-END:initComponents
 
@@ -142,8 +155,25 @@ public class ClienteMenu extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-   //Creamos una nueva instancia de panelHijoSuma
+   //Creamos una nueva instancia de 
         
+		
+		//Si ya está el otro Jpanel añadido al contenedor, entonces se elimina
+			try{
+			this.remove(ES);
+			}
+			catch(Exception e){
+			}
+			
+			
+		//Si ya está el otro Jpanel añadido al contenedor, entonces se elimina
+			try{
+			this.remove(AT);
+			}
+			catch(Exception e){
+			}	
+		
+		
         AP = new Alta_PeticionUI();
 
         //Agregamos la instancia al JFrame, con un layout al centro
@@ -154,6 +184,67 @@ public class ClienteMenu extends javax.swing.JFrame {
 
 
     }//GEN-LAST:event_jMenuItem5ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        // TODO add your handling code here:
+		
+		//Si ya está el otro Jpanel añadido al contenedor, entonces se elimina
+			try{
+			this.remove(AP);
+			}
+			catch(Exception e){
+			}
+			
+			
+		//Si ya está el otro Jpanel añadido al contenedor, entonces se elimina
+			try{
+			this.remove(AT);
+			}
+			catch(Exception e){
+			}	
+		
+		
+		
+		
+        
+        ES = new Entrada_StockUI();
+
+        //Agregamos la instancia al JFrame, con un layout al centro
+        this.add(ES, BorderLayout.CENTER);
+
+        //Hacemos que el JFrame tenga el tamaño de todos sus elementos
+        this.pack();// TODO add your handling code here:    
+           
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
+
+    private void jMenuItem6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem6ActionPerformed
+        // TODO add your handling code here:
+        
+      		//Si ya está el otro Jpanel añadido al contenedor, entonces se elimina
+			try{
+			this.remove(AP);
+			}
+			catch(Exception e){
+			}	  
+        
+		
+		      		//Si ya está el otro Jpanel añadido al contenedor, entonces se elimina
+			try{
+			this.remove(ES);
+			}
+			catch(Exception e){
+			}	  
+        
+        		     //Creamos una nueva instancia de
+        
+        AT = new Atender_PeticionUI();
+
+        //Agregamos la instancia al JFrame, con un layout al centro
+        this.add(AT, BorderLayout.CENTER);
+
+        //Hacemos que el JFrame tenga el tamaño de todos sus elementos
+        this.pack();// TODO add your handling code here:  
+    }//GEN-LAST:event_jMenuItem6ActionPerformed
 
 
 
