@@ -9,6 +9,7 @@ import edu.uoc.tds.pec3.server.bbdd.GestorBBDD;
 import java.io.Serializable;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.sql.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
 
@@ -68,10 +69,14 @@ public class GestorEstocInterfaceImpl extends UnicastRemoteObject
 
     @Override
     public void aceptarPeticionRecurso(PeticionRecurso peticion) throws RemoteException {
-        //Comprobar si el stock es suficiente
+        //Comprobar si el stock es suficiente        
+        java.util.Date date = new java.util.Date();
+        Date dtActual;
         Recurso rec = gestorBBDD.recuperarRecurso(peticion.getIdRecurso());
         if(rec.getStock()>=peticion.getCantidad()){
             //Establecer fecha y grabar la petición
+            dtActual = new java.sql.Date(date.getTime());
+            peticion.setFechaPeticion(dtActual);      
             gestorBBDD.modificarPeticion(peticion);
             //Establecer fecha ultima salida y nuevo stock en recurso
             rec.setStock(rec.getStock()-peticion.getCantidad());
